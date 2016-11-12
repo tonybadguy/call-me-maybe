@@ -1,5 +1,5 @@
 {
-  "name": "call-me-maybe",
+  "name": "@tonybadguy/call-me-maybe",
   "version": "1.0.0",
   "description": "A REST client library with easy model templating and straightforward extensibility",
   "main": "lib/index.js",
