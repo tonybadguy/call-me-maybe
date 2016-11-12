@@ -1,7 +1,7 @@
 {
   "name": "@tonybadguy/call-me-maybe",
   "version": "1.0.2",
-  "description": "A REST client library with easy model templating and straightforward extensibility",
+  "description": "A Node.js module for creating REST clients with easy request model templating and straightforward extensibility",
   "main": "lib/index.js",
   "scripts": {
     "test": "tap ./lib/*.test.*js --coverage",
