@@ -1,0 +1,38 @@
+{
+  "name": "call-me-maybe",
+  "version": "1.0.0",
+  "description": "A REST client library with easy model templating and straightforward extensibility",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "tap ./lib/*.test.*js --coverage",
+    "cover": "tap --coverage-report=lcov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "tonybadguy/call-me-maybe"
+  },
+  "keywords": [
+    "REST",
+    "template",
+    "promise",
+    "request",
+    "http",
+    "https"
+  ],
+  "author": "Tony Liu",
+  "license": "MIT",
+  "dependencies": {
+    "error": "^7.0.2",
+    "small-request": "^2.0.2",
+    "string-template": "^1.0.0"
+  },
+  "devDependencies": {
+    "proxyquire": "^1.7.10",
+    "tap": "^8.0.0"
+  },
+  "nyc": {
+    "exclude": [
+      "lib/*.test.*js"
+    ]
+  }
+}
