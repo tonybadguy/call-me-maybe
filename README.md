@@ -2,10 +2,10 @@
 
 [![Build Status](https://travis-ci.org/tonybadguy/call-me-maybe.svg?branch=master)](https://travis-ci.org/tonybadguy/call-me-maybe) [![codecov](https://codecov.io/gh/tonybadguy/call-me-maybe/branch/master/graph/badge.svg)](https://codecov.io/gh/tonybadguy/call-me-maybe) [![bitHound Overall Score](https://www.bithound.io/github/tonybadguy/call-me-maybe/badges/score.svg)](https://www.bithound.io/github/tonybadguy/call-me-maybe)
 
-A REST client library with easy model templating and straightforward extensibility
+A REST client Node.js module with easy request model templating and straightforward extensibility
 
 ### A simple GET request :+1:
-```
+```javascript
 const send = require('call-me-maybe');
 
 send({
@@ -19,7 +19,7 @@ send({
 ```
 
 ### POST with body :sparkling_heart:
-```
+```javascript
 const send = require('call-me-maybe');
 
 send({
@@ -32,8 +32,14 @@ send({
 });
 ```
 
+## All features below are enabled by default as pluggable filters
+
+* They are implemented using pluggable filter modules on request / response
+* You can customize which filters to use via optional params of the send() function
+* You can write your own filters -- see existing for reference
+
 ### POST with object as body :sparkles::sparkling_heart::sparkles:
-```
+```javascript
 const send = require('call-me-maybe');
 
 send({
@@ -49,7 +55,7 @@ send({
 ```
 
 ### Make it fancy with urlParams :sparkles::scream::sparkles:
-```
+```javascript
 const send = require('call-me-maybe');
 
 send({
@@ -63,7 +69,7 @@ send({
 ```
 
 ### Or with a query :sparkles::sparkling_heart::scream::sparkling_heart::sparkles:
-```
+```javascript
 const send = require('call-me-maybe');
 
 send({
@@ -77,7 +83,7 @@ send({
 ```
 
 ### Handle non-200 status :fire::poop::fire::ok_hand:
-```
+```javascript
 send({
   url: 'https://httpbin.org/status/500'
 }).then(response => {
