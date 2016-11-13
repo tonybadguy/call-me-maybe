@@ -1,4 +1,4 @@
-# call-me-maybe
+# @tonybadguy/call-me-maybe
 
 [![npm version](https://badge.fury.io/js/%40tonybadguy%2Fcall-me-maybe.svg)](https://badge.fury.io/js/%40tonybadguy%2Fcall-me-maybe) [![Build Status](https://travis-ci.org/tonybadguy/call-me-maybe.svg?branch=master)](https://travis-ci.org/tonybadguy/call-me-maybe) [![codecov](https://codecov.io/gh/tonybadguy/call-me-maybe/branch/master/graph/badge.svg)](https://codecov.io/gh/tonybadguy/call-me-maybe) [![bitHound Overall Score](https://www.bithound.io/github/tonybadguy/call-me-maybe/badges/score.svg)](https://www.bithound.io/github/tonybadguy/call-me-maybe)
 
@@ -6,7 +6,7 @@ A Node.js module for creating REST clients with easy request model templating an
 
 ### A simple GET request :+1:
 ```javascript
-const send = require('call-me-maybe');
+const send = require('@tonybadguy/call-me-maybe');
 
 send({
   url: 'https://httpbin.org/get'
@@ -20,7 +20,7 @@ send({
 
 ### POST with body :sparkling_heart:
 ```javascript
-const send = require('call-me-maybe');
+const send = require('@tonybadguy/call-me-maybe');
 
 send({
   url: 'https://httpbin.org/post',
@@ -40,7 +40,7 @@ send({
 
 ### POST with object as body :sparkles::sparkling_heart::sparkles:
 ```javascript
-const send = require('call-me-maybe');
+const send = require('@tonybadguy/call-me-maybe');
 
 send({
   url: 'https://httpbin.org/post',
@@ -56,7 +56,7 @@ send({
 
 ### Make it fancy with urlParams :sparkles::scream::sparkles:
 ```javascript
-const send = require('call-me-maybe');
+const send = require('@tonybadguy/call-me-maybe');
 
 send({
   url: 'https://httpbin.org/{foo},  // 'https://httpbin.org/get'
@@ -70,7 +70,7 @@ send({
 
 ### Or with a query :sparkles::sparkling_heart::scream::sparkling_heart::sparkles:
 ```javascript
-const send = require('call-me-maybe');
+const send = require('@tonybadguy/call-me-maybe');
 
 send({
   url: 'https://httpbin.org/get,  // 'https://httpbin.org/get?foo=bar%20baz'
