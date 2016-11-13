@@ -86,19 +86,19 @@ send({
 });
 ```
 
-### Set headers
+### Set headers :collision::dizzy_face::collision:
 ```javascript
 send({
   url: 'https://httpbin.org/get',
   headers:{
-    'x-my-header:'oh hai'
+    'x-my-header':'oh hai'
   }
 }).then(response => {
   console.log(response.body);
 });
 ```
 
-### Set bearer token authorization header
+### Set bearer token authorization header :collision::revolving_hearts::dizzy_face::revolving_hearts::collision:
 This is a shortcut for setting the Authorization header.
 
 ```javascript
@@ -129,7 +129,7 @@ send({
 * You can customize which filters to use via optional params of the send() function
 * You can write your own filters
 
-### Advanced: Overriding default filters
+### Advanced: Overriding default filters :rocket:
 ```javascript
 'use strict';
 
@@ -148,7 +148,7 @@ send(request, requestFilters, responseFilters).then(response => {
 });
 ```
 
-### Advanced: Example custom request filter
+### Advanced: Example custom request filter :rocket::rocket:
 ```javascript
 'use strict';
 
@@ -162,7 +162,7 @@ module.exports = {
 };
 ```
 
-### Advanced: Custom response filters are exactly the same
+### Advanced: Custom response filters are exactly the same :rocket::rocket:
 ```javascript
 'use strict';
 
