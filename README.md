@@ -62,10 +62,10 @@ send({
   url: 'https://httpbin.org/post',
   method: 'POST',
   urlencodedBody: {
-    foo: 'bar baz'
+    foo: 'bar'
   }
 }).then(response => {
-  console.log(response.jsonBody.data); // 'foo=bar%20baz'
+  console.log(response.jsonBody.form.foo); // 'bar'
 });
 ```
 
