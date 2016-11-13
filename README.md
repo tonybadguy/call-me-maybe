@@ -38,7 +38,7 @@ send({
 * You can customize which filters to use via optional params of the send() function
 * You can write your own filters -- see existing for reference
 
-### POST with object as body :sparkles::sparkling_heart::sparkles:
+### POST with object as json body :sparkles::sparkling_heart::sparkles:
 ```javascript
 const send = require('@tonybadguy/call-me-maybe');
 
@@ -54,7 +54,23 @@ send({
 });
 ```
 
-### Make it fancy with urlParams :sparkles::scream::sparkles:
+### POST with object as urlencoded body :sparkles::scream::sparkles:
+```javascript
+const send = require('@tonybadguy/call-me-maybe');
+
+send({
+  url: 'https://httpbin.org/post',
+  method: 'POST',
+  urlencodedBody: {
+    foo: 'bar baz'
+  }
+}).then(response => {
+  console.log(response.jsonBody.data); // 'foo=bar%20baz'
+});
+```
+
+
+### Make it fancy with urlParams :sparkles::sparkling_heart::scream::sparkling_heart::sparkles:
 ```javascript
 const send = require('@tonybadguy/call-me-maybe');
 
@@ -68,7 +84,7 @@ send({
 });
 ```
 
-### Or with a query :sparkles::sparkling_heart::scream::sparkling_heart::sparkles:
+### Or with a query :hand::dollar::dollar::dollar:
 ```javascript
 const send = require('@tonybadguy/call-me-maybe');
 
