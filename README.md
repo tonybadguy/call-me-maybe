@@ -15,13 +15,13 @@ send({
   console.log(response.body);
   console.log(response.headers);
   console.log(response.jsonBody.origin);
+}).catch(error => {
+  console.log(error);
 });
 ```
 
 ### POST with body :sparkling_heart:
 ```javascript
-const send = require('@tonybadguy/call-me-maybe');
-
 send({
   url: 'https://httpbin.org/post',
   method: 'POST',
@@ -32,16 +32,8 @@ send({
 });
 ```
 
-## All features below are enabled by default as pluggable filters
-
-* They are implemented using pluggable filter modules on request / response
-* You can customize which filters to use via optional params of the send() function
-* You can write your own filters -- see existing for reference
-
 ### POST with object as json body :sparkles::sparkling_heart::sparkles:
 ```javascript
-const send = require('@tonybadguy/call-me-maybe');
-
 send({
   url: 'https://httpbin.org/post',
   method: 'POST',
@@ -54,10 +46,10 @@ send({
 });
 ```
 
+```Content-Type``` header is automatically set to ```application/json```.
+
 ### POST with object as urlencoded body :sparkles::scream::sparkles:
 ```javascript
-const send = require('@tonybadguy/call-me-maybe');
-
 send({
   url: 'https://httpbin.org/post',
   method: 'POST',
@@ -68,14 +60,12 @@ send({
   console.log(response.jsonBody.form.foo); // 'bar'
 });
 ```
-
+```Content-Type``` header is automatically set to ```application/x-www-form-urlencoded```.
 
 ### Make it fancy with urlParams :sparkles::sparkling_heart::scream::sparkling_heart::sparkles:
 ```javascript
-const send = require('@tonybadguy/call-me-maybe');
-
 send({
-  url: 'https://httpbin.org/{foo},  // 'https://httpbin.org/get'
+  url: 'https://httpbin.org/{foo}',  // 'https://httpbin.org/get'
   urlParams:{
     foo:'get'
   }
@@ -86,10 +76,8 @@ send({
 
 ### Or with a query :hand::dollar::dollar::dollar:
 ```javascript
-const send = require('@tonybadguy/call-me-maybe');
-
 send({
-  url: 'https://httpbin.org/get,  // 'https://httpbin.org/get?foo=bar%20baz'
+  url: 'https://httpbin.org/get',  // 'https://httpbin.org/get?foo=bar%20baz'
   query:{
     foo:'bar baz'
   }
@@ -97,6 +85,32 @@ send({
   console.log(response.body);
 });
 ```
+
+### Set headers
+```javascript
+send({
+  url: 'https://httpbin.org/get',
+  headers:{
+    'x-my-header:'oh hai'
+  }
+}).then(response => {
+  console.log(response.body);
+});
+```
+
+### Set bearer token authorization header
+This is a shortcut for setting the Authorization header.
+
+```javascript
+send({
+  url: 'https://httpbin.org/get',
+  bearerToken: 'mytoken'
+}).then(response => {
+  console.log(response.body);
+});
+```
+
+```Authorization``` header is set to ```Bearer mytoken```.
 
 ### Handle non-200 status :fire::poop::fire::ok_hand:
 ```javascript
@@ -107,4 +121,57 @@ send({
 }).catch(error => {
   console.log(error.response.statusCode); // 500
 });
+```
+
+## All features above are enabled by default
+
+* They are implemented using pluggable filter modules on request / response
+* You can customize which filters to use via optional params of the send() function
+* You can write your own filters
+
+### Advanced: Overriding default filters
+```javascript
+'use strict';
+
+const send = require('@tonybadguy/call-me-maybe');
+const jsonBodyFilter = require('@tonybadguy/call-me-maybe/lib/response-filters/json-body');
+
+const request = {
+  url: 'https://httpbin.org/get'
+};
+
+const requestFilters = []; // don't use any of the default request filters
+const responseFilters = [jsonBodyFilter]; // only use the json body filter
+
+send(request, requestFilters, responseFilters).then(response => {
+  console.log(response);
+});
+```
+
+### Advanced: Example custom request filter
+```javascript
+'use strict';
+
+// a filter that always sets the request body to 'hello world!'
+module.exports = {
+  filter: (request) => {
+    request.body = 'hello world!';
+  
+    return request;
+  }
+};
+```
+
+### Advanced: Custom response filters are exactly the same
+```javascript
+'use strict';
+
+// a filter that always sets the response body to 'hello world!'
+module.exports = {
+  filter: (response) => {
+    response.body = 'hello world!';
+  
+    return request;
+  }
+};
 ```
