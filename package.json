@@ -1,6 +1,6 @@
 {
   "name": "@tonybadguy/call-me-maybe",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "A Node.js module for creating REST clients with easy request model templating and straightforward extensibility",
   "main": "lib/index.js",
   "scripts": {
