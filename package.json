@@ -17,7 +17,8 @@
     "promise",
     "request",
     "http",
-    "https"
+    "https",
+    "callmemaybe"
   ],
   "author": "Tony Liu",
   "license": "MIT",
