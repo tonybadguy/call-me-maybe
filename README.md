@@ -1,6 +1,6 @@
 # @tonybadguy/call-me-maybe
 
-[![npm version](https://badge.fury.io/js/%40tonybadguy%2Fcall-me-maybe.svg)](https://badge.fury.io/js/%40tonybadguy%2Fcall-me-maybe) [![Build Status](https://travis-ci.org/tonybadguy/call-me-maybe.svg?branch=master)](https://travis-ci.org/tonybadguy/call-me-maybe) [![codecov](https://codecov.io/gh/tonybadguy/call-me-maybe/branch/master/graph/badge.svg)](https://codecov.io/gh/tonybadguy/call-me-maybe) [![bitHound Overall Score](https://www.bithound.io/github/tonybadguy/call-me-maybe/badges/score.svg)](https://www.bithound.io/github/tonybadguy/call-me-maybe)
+[![npm version](https://badge.fury.io/js/%40tonybadguy%2Fcall-me-maybe.svg)](https://badge.fury.io/js/%40tonybadguy%2Fcall-me-maybe) [![Build Status](https://travis-ci.org/tonybadguy/call-me-maybe.svg?branch=master)](https://travis-ci.org/tonybadguy/call-me-maybe) [![codecov](https://codecov.io/gh/tonybadguy/call-me-maybe/branch/master/graph/badge.svg)](https://codecov.io/gh/tonybadguy/call-me-maybe)
 
 A Node.js module for creating REST clients with easy request model templating and straightforward extensibility
 
